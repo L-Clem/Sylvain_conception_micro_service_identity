@@ -6,7 +6,12 @@ Documentation d'API pour un service d'identité.
 
 ## Usage/Examples
 
-Cliquez ici : [Lien documentation](https://raw.githack.com/L-Clem/Sylvain_conception_micro_service_identity/main/api_documentation.html)
+
+Cliquez ici : 
+
+[![img](https://gcdnb.pbrd.co/images/XuLiaNGnYugx.png?o=1)](https://raw.githack.com/L-Clem/Sylvain_conception_micro_service_identity/main/api_documentation.html)
+
+<br>
 
 _Sinon téléchargez le fichier [api_documentation.html](./api_documentation.html) puis l'ouvrir dans le navigateur pour accéder à la documentation interactive._
 
