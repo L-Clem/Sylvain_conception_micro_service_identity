@@ -8,12 +8,12 @@ Documentation d'API pour un service d'identité.
 
 Cliquez ici : [Lien documentation](https://raw.githack.com/L-Clem/Sylvain_conception_micro_service_identity/main/api_documentation.html)
 
-Sinon téléchargez le fichier [api_documentation.html](./api_documentation.html) puis l'ouvrir dans le navigateur pour accéder à la documentation interactive.
+_Sinon téléchargez le fichier [api_documentation.html](./api_documentation.html) puis l'ouvrir dans le navigateur pour accéder à la documentation interactive._
 
 
 ## CI/CD
 
-Un pipeline d'auto génération de la documentation est actuellement actif ([./.github/workflows/raml_documentation.yml](./.github/workflows/raml_documentation.yml)). 
+Un pipeline d'auto génération de la documentation est actuellement actif ([Generate documentation pipeline](./.github/workflows/raml_documentation.yml)). 
 
 
 ## Authors
