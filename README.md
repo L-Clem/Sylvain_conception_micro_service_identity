@@ -11,7 +11,7 @@ Télécharger le fichier [api_documentation.html](./api_documentation.html) puis
 
 ## CI/CD
 
-Un pipeline d'auto génération de la documentation est actuellement actif ([./.github/workflows/raml_documentation.yml](raml_documentation.yml)). 
+Un pipeline d'auto génération de la documentation est actuellement actif ([./.github/workflows/raml_documentation.yml](./.github/workflows/raml_documentation.yml)). 
 
 
 ## Authors
