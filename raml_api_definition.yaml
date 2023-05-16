@@ -5,6 +5,25 @@ baseUri: http://api.com/{version}
 version: v1
 
 /jwks:
+  get:
+    description: Obtain cryptographic keys for signature validation and encryption.
+    responses:
+      200:
+        description: Pair of keys.
+        body:
+          application/json:
+            example: |
+              {
+                "keys" : [
+                  {
+                   "kty" : "RSA",
+                   "use" : "sig",
+                   "kid" : "P9Zd",
+                   "e"   : "AQAB",
+                   "n"   : "kWp2zRA23Z3vTL4uoe8kTFptxBVFunIoP4t_8TDYJrOb7D1iZNDXVeEsYKp6ppmrTZDAgd-cNOTKLd4M39WJc5FN0maTAVKJc7NxklDeKc4dMe1BGvTZNG4MpWBo-taKULlYUu0ltYJuLzOjIrTHfarucrGoRWqM0sl3z2-fv9k"
+                  }
+                ]
+            }
 
 /register:
   post:
@@ -54,13 +73,47 @@ version: v1
     description: Log out a user using it's JWT.
 
 /introspection:
+  description: Verify token and grants.
   get:
-
+    description: Send token for verification.
+    body:
+      application/json:
+        example: |
+          {
+              "jwt": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkplYW4gUGllcnJlIiwiaWF0IjoxNTE2MjM5MDIyfQ.jnwOHy2wQm1LG5upI_y0lr0u9dN8yBQUWR0uKH15jWE"
+          }
+    responses:
+      200:
+        description: "Token informations."
+        body:
+          application/json:
+            example: |
+              {
+                "grants": "admin"
+                "validity": "valid"
+              }
+      404:
+        description: "Token not found."
     
 /userinfo:
   get:
     securedBy: [ jwt ]
-    
+    description: Get user informations.
+    responses:
+      200:
+        description: "User informations."
+        body:
+          application/json:
+            example: |
+              {
+                "id": "64638d9f85e0d9a95b97a8e2"
+                "username": "JeanPierre",
+                "email": "jean.pierre@stone.com",
+                "firstName": "Jean",
+                "lastName": "Pierre"
+              }
+      404:
+        description: "User not found."
 
 securitySchemes:
   jwt:
@@ -76,5 +129,4 @@ securitySchemes:
         Authorization:
           description: Bearer token.
           type: string
-          example: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkplYW4gUGllcnJlIiwiaWF0IjoxNTE2MjM5MDIyfQ.jnwOHy2wQm1LG5upI_y0lr0u9dN8yBQUWR0uKH15jWE
-      
+          example: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkplYW4gUGllcnJlIiwiaWF0IjoxNTE2MjM5MDIyfQ.jnwOHy2wQm1LG5upI_y0lr0u9dN8yBQUWR0uKH15jWE"
