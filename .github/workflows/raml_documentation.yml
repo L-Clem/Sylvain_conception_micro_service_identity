@@ -23,6 +23,7 @@ jobs:
     - run: |
        git config --global user.email "locascio.clement@gmail.com"
        git config --global user.name "ClemLcs"
+       git add ./api_documentation.html
        git commit -am "Generate new html documentation"
        git push
 
