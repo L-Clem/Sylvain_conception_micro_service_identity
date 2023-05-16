@@ -19,7 +19,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: |
-        npm i -g raml2html
+        npm install raml2html
         raml2html raml_api_definition.yaml > api_documentation.html
         git commit -am "Generate new html documentation"
         git push
