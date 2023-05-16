@@ -21,7 +21,6 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -g raml2html
-    - run: npm install -g raml2html-werk-theme
-    - run: raml2html --theme raml2html-werk-theme --output api_documentation.html --input raml_api_definition.yaml
+    - run: raml2html raml_api_definition.yaml > api_documentation.html 
     - uses: stefanzweifel/git-auto-commit-action@v4
 
