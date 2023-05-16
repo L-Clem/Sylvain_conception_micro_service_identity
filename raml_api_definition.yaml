@@ -5,8 +5,9 @@ baseUri: http://api.com/{version}
 version: v1
 
 /jwks:
+  description: Obtain public cryptographic keys for signature validation and encryption.
   get:
-    description: Obtain cryptographic keys for signature validation and encryption.
+    description: Obtain public cryptographic keys for signature validation and encryption.
     responses:
       200:
         description: Pair of keys.
@@ -24,8 +25,9 @@ version: v1
               }
 
 /register:
+  description: Register a user.
   post:
-    description: Register a vendor.
+    description: Register a user.
     body: 
       application/json:
         example: |
@@ -43,8 +45,9 @@ version: v1
         description: Error with the passed parameters.
         
 /login:
+  description: "Log-in a user using it's credentials."
   post:
-    description: Log-in a user using it's credentials.
+    description: "Log-in a user using it's credentials."
     body:
       application/json:
         example: |
@@ -66,6 +69,7 @@ version: v1
         description: No credentials or invalid credentials.
         
 /logout:
+  description: "Log out a user using it's JWT."
   post:
     securedBy: [ jwt ]
     description: Log out a user using it's JWT.
@@ -94,6 +98,7 @@ version: v1
         description: "Token not found."
     
 /userinfo:
+  description: Get user informations.
   get:
     securedBy: [ jwt ]
     description: Get user informations.
