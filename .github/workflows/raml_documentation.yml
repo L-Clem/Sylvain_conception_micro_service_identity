@@ -18,7 +18,7 @@ jobs:
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install raml2html
+    - run: npm install -g raml2html
     - run: raml2html raml_api_definition.yaml > api_documentation.html
     - run: git commit -am "Generate new html documentation"
     - run: git push
